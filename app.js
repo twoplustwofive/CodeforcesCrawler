@@ -1,16 +1,20 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+const fetch = require("node-fetch");
+const auth = require("./routes/auth");
+//connect to db
+mongoose.connect("mongodb+srv://CodeforcesCrawler:CodeforcesCrawler@cluster0.sjd8e.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    { useUnifiedTopology: true ,useNewUrlParser: true },
+    ()=>{
+        console.log("Connected to db!");
+    }
+);
+//middlewares
+app.use(express.json());
 
-//import routes
-const authRoute = require("./routes/auth");
-
-
-//import middlewares
-app.use("/api/user",authRoute);
-
-app.get("/",(req,res)=>{
-    res.send("hello");
-});
+//route middlewares
+app.use("/api/user",auth);
 
 app.listen(3000,()=>{
     console.log("Hola, Server started!");
