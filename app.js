@@ -21,7 +21,7 @@ app.set("view engine","ejs");
 app.use(express.json());
 
 //route middlewares
-app.use("/api/user",auth);
+app.use("/auth",auth);
 app.use("/cfuser",cfuser);
 
 app.get("/",(req,res)=>{

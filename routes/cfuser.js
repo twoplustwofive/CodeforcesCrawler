@@ -9,6 +9,7 @@ router.post("/info",urlencodedParser, async(req,res)=>{
     try{
         var response = await fetch(url);
         var json = await response.json();
+        console.log(response.status);
         console.log(json.result);
         res.send(json.result);
     }
