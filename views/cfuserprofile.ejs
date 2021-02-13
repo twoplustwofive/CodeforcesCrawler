@@ -7,6 +7,20 @@
 
     <body>
         <%- include("base.ejs") %>
+        
+        <div style="padding: 40px;">
+           <img src=<%-data.titlePhoto%> class="img-radius" alt="User-Profile-Image">
+           <h3>Name: <%-data.firstName%> <%-data.lastName%></h3>
+           <h3>Username: <%-data.handle%></h3>
+           <h3>Rank: <%-data.rank%></h3>
+           <h3>Rating: <%-data.rating%></h3>
+           <h3>Max Rating: <%-data.maxRating%></h3>
+           <h3>From: <%-data.city%>, <%-data.country%></h3>
+           <h3>Contribution: <%-data.contribution%></h3>
+           <h3>Organization: <%-data.organization%></h3>
+           <h3>Friend of: <%-data.friendOfCount%></h3>
+        </div>
+
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
